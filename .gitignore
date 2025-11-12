@@ -1,0 +1,53 @@
+# Cache do navegador e sistema
+.cache/
+
+# Configurações pessoais
+.config/
+.conda/
+.dotnet/
+.gnupg/
+.ipython/
+.java/
+.jdks/
+.jupyter/
+.local/
+.m2/
+.npm/
+.nvm/
+.pgadmin/
+.pki/
+.sdkman/
+.sts4/
+.var/
+.vscode/
+
+# Históricos
+.mysql_history
+.lesshst
+.wget-hsts
+
+# Arquivos de configuração pessoal
+.git-credentials
+.gitconfig
+.profile
+.zshrc
+.h2.server.properties
+.hidden
+.inputrc
+
+# Pastas pessoais
+Documentos/
+Downloads/
+Imagens/
+Modelos/
+IdeaProjects/
+IdeaSnapshots/
+snap/
+
+# Arquivos temporários
+0
+meuPrograma
+pdepois
+*.deb
+*.sh
+packages.microsoft.gpg
