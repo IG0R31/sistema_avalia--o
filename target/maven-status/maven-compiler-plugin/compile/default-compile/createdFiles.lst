@@ -1,7 +1,9 @@
 uel/br/sistema_avaliacao/TipoUsuario.class
 uel/br/sistema_avaliacao/Questao.class
 uel/br/sistema_avaliacao/QuestaoService.class
+uel/br/sistema_avaliacao/UserDetailsImpl.class
 uel/br/sistema_avaliacao/UsuarioService.class
+uel/br/sistema_avaliacao/SecurityConfig.class
 uel/br/sistema_avaliacao/QuestaoRepository.class
 uel/br/sistema_avaliacao/QuestaoController.class
 uel/br/sistema_avaliacao/Disciplina.class
@@ -11,3 +13,4 @@ uel/br/sistema_avaliacao/UsuarioRepository.class
 uel/br/sistema_avaliacao/Usuario.class
 uel/br/sistema_avaliacao/TipoQuestao.class
 uel/br/sistema_avaliacao/SistemaDeAvaliacoesApplication.class
+uel/br/sistema_avaliacao/UsuarioDetailsService.class

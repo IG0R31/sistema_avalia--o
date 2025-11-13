@@ -22,16 +22,21 @@ public class SecurityConfig {
         http
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**").permitAll()
-                .requestMatchers("/login", "/cadastro").permitAll()
+                .requestMatchers("/", "/login", "/cadastro").permitAll()
+                .requestMatchers("/questoes/cadastro").hasRole("PROFESSOR")
                 .anyRequest().authenticated()
             )
             .formLogin(form -> form
-                .loginPage("/login")
+                .loginPage("/")
+                .loginProcessingUrl("/login")
+                .usernameParameter("email")
+                .passwordParameter("senha")
                 .defaultSuccessUrl("/dashboard")
                 .permitAll()
             )
             .logout(logout -> logout
-                .logoutSuccessUrl("/login")
+                .logoutUrl("/logout")
+                .logoutSuccessUrl("/")
                 .permitAll()
             );
 

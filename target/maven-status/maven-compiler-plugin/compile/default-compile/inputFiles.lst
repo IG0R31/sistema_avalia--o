@@ -7,6 +7,10 @@
 /home/igor-isa/Documentos/sistema_avaliação/src/main/java/uel/br/sistema_avaliacao/QuestaoService.java
 /home/igor-isa/Documentos/sistema_avaliação/src/main/java/uel/br/sistema_avaliacao/SecurityConfig.java
 /home/igor-isa/Documentos/sistema_avaliação/src/main/java/uel/br/sistema_avaliacao/SistemaDeAvaliacoesApplication.java
+/home/igor-isa/Documentos/sistema_avaliação/src/main/java/uel/br/sistema_avaliacao/TipoQuestao.java
+/home/igor-isa/Documentos/sistema_avaliação/src/main/java/uel/br/sistema_avaliacao/TipoUsuario.java
+/home/igor-isa/Documentos/sistema_avaliação/src/main/java/uel/br/sistema_avaliacao/UserDetailsImpl.java
 /home/igor-isa/Documentos/sistema_avaliação/src/main/java/uel/br/sistema_avaliacao/Usuario.java
+/home/igor-isa/Documentos/sistema_avaliação/src/main/java/uel/br/sistema_avaliacao/UsuarioDetailsService.java
 /home/igor-isa/Documentos/sistema_avaliação/src/main/java/uel/br/sistema_avaliacao/UsuarioRepository.java
 /home/igor-isa/Documentos/sistema_avaliação/src/main/java/uel/br/sistema_avaliacao/UsuarioService.java
