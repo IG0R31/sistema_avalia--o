@@ -15,7 +15,6 @@ public class Disciplina {
 
     private String descricao;
 
-    // Construtores, Getters e Setters
     public Disciplina() {}
 
     public Disciplina(String nome, String descricao) {
@@ -23,7 +22,6 @@ public class Disciplina {
         this.descricao = descricao;
     }
 
-    // Getters e Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 

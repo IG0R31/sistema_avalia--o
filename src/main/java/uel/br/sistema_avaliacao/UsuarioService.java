@@ -19,48 +19,38 @@ public class UsuarioService {
     private PasswordEncoder passwordEncoder;
     
     public Optional<Usuario> autenticar(String email, String senha) {
-        if (email == null || email.trim().isEmpty()) {
-            logger.warn("Tentativa de autenticação com email vazio");
-            throw new IllegalArgumentException("Email não pode ser vazio");
-        }
-        if (senha == null || senha.trim().isEmpty()) {
-            logger.warn("Tentativa de autenticação com senha vazia para email: {}", email);
-            throw new IllegalArgumentException("Senha não pode ser vazia");
-        }
-        
-        Optional<Usuario> usuario = usuarioRepository.findByEmail(email);
-        if (usuario.isPresent() && passwordEncoder.matches(senha, usuario.get().getSenha())) {
-            logger.info("Usuário {} autenticado com sucesso", email);
-            return usuario;
-        }
-        logger.warn("Falha na autenticação para email: {}", email);
-        return Optional.empty();
+    if (email == null || email.trim().isEmpty()) {
+        logger.warn("Tentativa de autenticação com email vazio");
+        throw new IllegalArgumentException("Email não pode ser vazio");
+    }
+    if (senha == null || senha.trim().isEmpty()) {
+        logger.warn("Tentativa de autenticação com senha vazia para email: {}", email);
+        throw new IllegalArgumentException("Senha não pode ser vazia");
     }
     
-    public Usuario salvarUsuario(Usuario usuario) {
-        if (usuario == null) {
-            logger.error("Tentativa de salvar usuário nulo");
-            throw new IllegalArgumentException("Usuário não pode ser nulo");
-        }
-        if (usuario.getEmail() == null || usuario.getEmail().trim().isEmpty()) {
-            logger.error("Tentativa de salvar usuário sem email");
-            throw new IllegalArgumentException("Email é obrigatório");
-        }
-        if (usuario.getSenha() == null || usuario.getSenha().trim().isEmpty()) {
-            logger.error("Tentativa de salvar usuário sem senha");
-            throw new IllegalArgumentException("Senha é obrigatória");
-        }
+    Optional<Usuario> usuario = usuarioRepository.findByEmail(email);
+    
+    if (usuario.isPresent()) {
+        Usuario user = usuario.get();
+        String senhaBanco = user.getSenha();
         
-        usuario.setSenha(passwordEncoder.encode(usuario.getSenha()));
-        logger.info("Salvando novo usuário com email: {}", usuario.getEmail());
-        return usuarioRepository.save(usuario);
+       
+        if (senhaBanco.startsWith("$2a$")) {
+     
+            if (passwordEncoder.matches(senha, senhaBanco)) {
+                logger.info("Usuário {} autenticado com sucesso (BCrypt)", email);
+                return usuario;
+            }
+        } else {
+     
+            if (senhaBanco.equals(senha)) {
+                logger.info("Usuário {} autenticado com sucesso (texto puro)", email);
+                return usuario;
+            }
+        }
     }
     
-    public boolean emailExiste(String email) {
-        if (email == null || email.trim().isEmpty()) {
-            logger.warn("Verificação de email vazio");
-            return false;
-        }
-        return usuarioRepository.existsByEmail(email);
+    logger.warn("Falha na autenticação para email: {}", email);
+    return Optional.empty();
     }
 }

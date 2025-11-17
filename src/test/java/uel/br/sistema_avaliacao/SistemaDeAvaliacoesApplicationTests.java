@@ -8,6 +8,5 @@ class SistemaDeAvaliacoesApplicationTests {
 
     @Test
     void contextLoads() {
-        // Teste de carga do contexto Spring
     }
 }

@@ -32,10 +32,8 @@ public class Questao {
     @JoinColumn(name = "disciplina_id")
     private Disciplina disciplina;
 
-    // Construtores, Getters e Setters
-    public Questao() {}
+    }
 
-    // Getters e Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 

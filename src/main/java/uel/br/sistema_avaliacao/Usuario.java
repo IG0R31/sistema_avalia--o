@@ -25,7 +25,6 @@ public class Usuario {
 
     private String matricula;
 
-    // Construtores, Getters e Setters
     public Usuario() {}
 
     public Usuario(String nome, String email, String senha, TipoUsuario tipo) {
@@ -35,7 +34,6 @@ public class Usuario {
         this.tipo = tipo;
     }
 
-    // Getters e Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
